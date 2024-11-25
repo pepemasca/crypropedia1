@@ -1,0 +1,70 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Gestiona activos sólidamente",
+    description:
+      "Las finanzas personales en España son tratadas como algo irrelevante. Es por ello que en un entorno tan turbulento como lo es el cryptomercado, se torna en esencial tener una sólida base con principios que permitan estabilidad.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Maximiza rentabilidades",
+    description:
+      "Accede a operaciones exclusivas con tokens de todo tipo.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Accede a estrategias detalladas",
+    description:
+      "No sirve solamente poner tu dinero donde alguien te dice que lo hagas, muchas veces está bien analizar si coincide con tu forma de ver el mundo o tu periodo temporal.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Web 3",
+    description:
+      "Vamos hacía un mundo digital (años luz del actual), es por ello que los early adopters podrán conseguir oportunidades únicas.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Reportes mensuales",
+    description:
+      "Informate periódicamente sobre los acontecimientos más recientes con todo lujo de detalle.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Comunidad",
+    description:
+      "Participa en mentorías individuales o colectivas, analiza junto a Javier tu cartera o algún proyecto que te interese.",
+    icon: "bx:bxs-user",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Intereses alineados (Esto no es el curso de Llados)
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    El propósito es hacer una plataforma de libre acceso. Pero para incentivar a que dedique mi tiempo y esfuerzo a conseguir los mejores resultados,
+    las operaciones y estratégias, con las cuales se recibe información valiosa, solamente son accesibles a aquellos que compartan una baja comisión a modo
+    de donación por las rentabilidades generadas.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
