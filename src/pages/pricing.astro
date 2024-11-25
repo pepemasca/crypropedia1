@@ -1,0 +1,76 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Demo",
+    price: "Gratis",
+    popular: false,
+    features: [
+      "7 días de acceso",
+      "1 mentoría de 10 minutos",
+      "Operaciones limitadas",
+      "Acceso a blogs",
+      "Acceso básico",
+      "Atención por correo",
+    ],
+    button: {
+      text: "Adelante",
+      link: "/",
+    },
+  },
+  {
+    name: "Acceso ilimitado",
+    price: "10%*",
+    popular: true,
+    features: [
+      "Acceso completo anual",
+      "2 mentorías al mes",
+      "Todas las operaciones",
+      "2 análisis al año",
+      "Advanced Integrations",
+      "Atención prioritaria",
+    ],
+    button: {
+      text: "Me suscribo",
+      link: "#",
+    },
+  },
+  {
+    name: "Pack PRO (Próximamente)",
+    price: "Personalizado",
+    popular: false,
+    features: [
+      "Acceso a contenido accesorio",
+      "Mentorias ilimitadas*",
+      "Operaciones web 3",
+      "1 análisis al mes",
+      "Dedicated Account Manager",
+      "Botón Rojo",
+    ],
+    button: {
+      text: "Contacta",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Precios</Fragment>
+      <Fragment slot="desc">
+        Solo pagas si ganas. Sin sorpresas
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>
+
